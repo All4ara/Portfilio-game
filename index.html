@@ -1864,6 +1864,7 @@
             <div id="hero"></div>
             <div id="missiles"></div>
             <div id="enemies"></div>
+            <div id="explosions"></div>
         </div>
     
         
@@ -1947,6 +1948,10 @@
                     enemies[i].top = enemies[i].top + 1;
                 }
             }
+
+            function explode(enemyPosition){
+                document.getElementById('explosions').innerHTML += `<div class='explosion' style='left:${enemyPosition.left}px; top:${enemyPosition.top}px'></div>`;
+            }
     
             function collisionDetection() {
                 for (var enemy = 0; enemy < enemies.length; enemy++) {
@@ -1957,6 +1962,7 @@
                             missiles[missile].top <= (enemies[enemy].top + 50)  &&
                             missiles[missile].top >= enemies[enemy].top
                         ) {
+                            explode(enemies[enemy])
                             enemies.splice(enemy, 1);
                             missiles.splice(missile, 1);
                         }

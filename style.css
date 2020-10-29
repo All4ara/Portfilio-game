@@ -313,4 +313,29 @@ div.enemy {
     background-image: url('assets/enemy.png');
     position: absolute;
 }
+
+div#explosions{
+    width: 1200px;
+    height: 800px;
+    position: absolute;
+}
+div.explosion{
+    width: 60px;
+    height: 60px;
+    /* background-color: darkblue; */
+    background-image: url('assets/explosion.gif');
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    animation: hide 1s 1 forwards; 
+}
+
+@keyframes hide {
+    
+
+    100% {
+        visibility: hidden;
+    }
+} 
         
